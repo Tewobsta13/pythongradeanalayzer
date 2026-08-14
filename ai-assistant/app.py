@@ -13,11 +13,9 @@ with open(".env", "r") as file:
             api_key = line.split("=", 1)[1]
 
 
-# Create Flask app
 app = Flask(__name__)
 
 
-# Create Gemini client
 client = genai.Client(api_key=api_key)
 
 
@@ -30,28 +28,22 @@ def home():
 def chat():
 
     try:
-        # Get JSON sent by JavaScript
         data = request.get_json()
-
-        # Get and clean the user's message
         message = data["message"].strip()
-
-        # Check if message is empty
         if not message:
             return {
                 "error": "Please enter a message."
             }, 400
 
-        # Send message to Gemini
+      
         response = client.models.generate_content(
             model="gemini-3-flash-preview",
             contents=message
         )
 
-        # Get Gemini's response
+    
         answer = response.text
 
-        # Send response back to JavaScript
         return {
             "response": answer
         }
