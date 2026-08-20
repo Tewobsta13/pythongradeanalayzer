@@ -1,0 +1,26 @@
+.calculator {
+  width: 360px;
+  margin: 80px auto;
+  padding: 28px;
+  border-radius: 30px;
+
+  background: rgba(20, 20, 35, 0.75);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.calculator h1 {
+  margin: 0 0 22px;
+  text-align: center;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+
+  color: #ffffff;
+}
